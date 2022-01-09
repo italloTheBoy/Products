@@ -1,0 +1,23 @@
+<main class="container w-50">
+  <form action="/products/new" method="post" class="mt-4">
+    <fieldset class="d-flex flex-column">
+
+      <legend>Novo Produto</legend>
+
+      <label for="name" class="form-label">Nome</label>
+      <input type="text" name="name" id="name" class="form-control" placeholder="Nome do produto" required>
+
+      <label for="image" class="form-label">Imagem</label>
+      <input type="text" name="image" id="image" class="form-control" placeholder="Url da foto do produto" required>
+
+      <label for="price" class="form-label">Preço</label>
+      <input type="text" name="price" id="price" class="form-control" placeholder="Preço do produto" required>
+      
+      <label for="description" class="form-label">Descrição</label>
+      <textarea name="description" id="description" class="form-control" placeholder="Descrição do produto" required></textarea>
+      
+      <button type="submit" class="btn btn-outline-primary align-self-center mt-4">Cadastrar</button>
+
+    </fieldset>
+  </form>
+</main>
