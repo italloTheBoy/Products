@@ -1,0 +1,38 @@
+<main class="container w-50">
+  {{#if product}}
+
+    <form action="/products/edit" method="post" class="mt-4">
+      <fieldset class="d-flex flex-column">
+
+        <legend>Editar Produto</legend>
+
+        <input type="hidden" name="id" value="{{ product._id }}">
+
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" name="name" id="name" class="form-control" value="{{product.name}}" placeholder="Nome do produto" required>
+
+        <label for="image" class="form-label">Imagem</label>
+        <input type="text" name="image" id="image" class="form-control" value="{{product.image}}" placeholder="Url da foto do produto" required>
+
+        <label for="price" class="form-label">Preço</label>
+        <input type="text" name="price" id="price" class="form-control" value="{{product.price}}" placeholder="Preço do produto" required>
+        
+        <label for="description" class="form-label">Descrição</label>
+        <textarea name="description" id="description" class="form-control" placeholder="Descrição do produto" required>{{product.description}}</textarea>
+        
+        <button type="submit" class="btn btn-outline-primary align-self-center mt-4">Editar</button>
+
+      </fieldset>
+    </form>
+
+  {{else}}
+
+    <article class="border rounded m-auto mt-4 p-4 pt-2 pb-2 w-50">
+        <h1>Ops...</h1>
+        <p>Produto não encontrado.</p>
+    </article>
+
+  {{/if}}
+
+  
+</main>

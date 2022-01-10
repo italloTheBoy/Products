@@ -1,0 +1,31 @@
+<main class="constainer w-75 m-auto">
+  {{#if product }}
+
+    <article class="container d-flex flex-column w-75 p-4">
+
+      <img src="{{ product.image }}" alt="Foto do produto" class="card-img-top h-100 mb-4">
+
+
+      <div class="d-flex border-bottom pb-1">
+        <h4 class="flex-fill m-0">{{ product.name }}</h4>
+        <p class="text-success">R$ {{ product.price }}</p>
+      </div>
+
+      <p class="m-1">{{ product.description }}</p>
+
+      <div class="d-flex justify-content-end">
+        <a href="/products/edit/{{ product._id }}" class="btn btn-outline-primary m-1">Editar</a>
+        <a href="/products/delete/{{ product._id }}" class="btn btn-outline-danger m-1">Excluir</a> 
+      </div>
+
+    </article>
+
+  {{else}}
+
+    <article class="border rounded m-auto mt-4 p-4 pt-2 pb-2 w-50">
+        <h1>Ops...</h1>
+        <p>Produto não encontrado.</p>
+    </article>
+    
+  {{/if}}
+</main>

@@ -2,16 +2,24 @@
 
   {{#each products}}
     <article class="card d-flex flex-column w-25 m-4">
-      <img src="{{ image }}" alt="Foto da {{ name }}" class="card-img-top">
-      <h1 class="card-title text-nowrap m-0 p-2">{{ name }}</h1>
-      <p class="card-text text-success align-self-end p-2">R$ {{ price }}</p>
+
+      <img src="{{ image }}" alt="Foto do produto" class="card-img-top h-100">
+
+      <div class="d-flex flex-column p-2">
+        <a href="/products/select/{{ _id }}" class="card-title">{{ name }}</a>
+        <p class="card-text text-success align-self-end">R$ {{ price }}</p>
+      </div>
+
     </article>
+
+  {{else}}
+
+    <article class="border rounded m-auto mt-4 p-4 pt-2 pb-2 w-50">
+        <h1>Ops...</h1>
+        <p>Nemhum produto foi encontrado.</p>
+    </article>
+
   {{/each}}
   
 </main>
 
-{{#each products}}
-  <h1>{{name}}</h1>
-  <p>price: {{price}}</p>
-  <img src="{{image}}" alt="Foto da {{name}}">
-{{/each}}
